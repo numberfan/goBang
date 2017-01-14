@@ -1,0 +1,52 @@
+@import "_mixins.less";
+
+.game-container {
+    width: 600px;
+    height: 600px;
+    border: 1px solid #ccc;
+    position: relative;
+    margin: 20px;
+    .clearfix();
+    div {
+        border: 1px solid #ccc;
+        position: absolute;
+        cursor: pointer;
+        background: rgb(199, 157, 125);
+        background-repeat: no-repeat;
+        //background-size: 20px 20px;
+        //border: 1px solid rgb(199, 157, 125);
+        &:before {
+            content: "";
+            position: absolute;
+            top:0;
+            left:0;
+            width: 40px;
+            height:40px;
+            /*background-image: linear-gradient(to right, #c79d7d 19px, transparent 0),
+                                linear-gradient(to right, #ccc 21px, transparent 0),
+                                linear-gradient(to top, #c79d7d 19px, transparent 0),
+                                linear-gradient(to top, #ccc 21px, transparent 0);*/
+        }
+        &:after {
+            content: "";
+            width: 70%;
+            height: 70%;
+            position: absolute;
+            display: block;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            .border-radius(50%);
+        }
+        &.black {
+            &:after {
+                background: #000;
+            }
+        }
+        &.white {
+            &:after {
+                background: #fff;
+            }
+        }
+    }
+}
