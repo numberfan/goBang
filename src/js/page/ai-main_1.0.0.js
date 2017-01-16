@@ -68,6 +68,7 @@
 
             personTurn = false;
 
+            //玩家赢法数组
             for (var i = 0; i < rounteCount; i++) {
                 if (allRounte[x][y][i]) {
                     personWin[i]++;
@@ -132,6 +133,7 @@
             }
         }
 
+        //落子的最佳位置
         for (var i = 0; i < rows; i++) {
             for (var j = 0; j < cols; j++) {
 
@@ -151,6 +153,7 @@
 
         var isSetWell = this.setComputerChess(maxX, maxY);
 
+        //落子
         if (isSetWell == true) {
             personTurn = true;
             for (var i = 0; i < rounteCount; i++) {
